@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Article">
+<head>
+  <meta charset="UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-signin-client_id" content="217307309519-cpmhnceomugub797od9sub1qv3s6sg93.apps.googleusercontent.com">
+  <meta name="google-signin-scope" content="profile email">
+
+
+
+  <title>Google and Facebook</title>
+		
+
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="{{ url_for('static',filename='css/googleFacebook.css') }}">
+		
+		<script type="text/javascript" data-main="{{ url_for('static', filename='js/main') }}" src="{{ url_for('static', filename='js/lib/require.js') }}"></script>
+</head>
+		
+
+
+<body >
+
+
+	<!-- Login button to toggle #googleFacebook -->
+	<div  style="margin:50px 0px 0px 50px;">
+		<button class="btn btn-default {% if log == 1 %} logout {% else %} googleFacebookLoginButton {% endif %} "  data-end>
+				<font style=" font-size:150%">
+						<i class="glyphicon glyphicon glyphicon-user"></i>
+								</font>
+						 {% if log == 1 %} logout {% else %} login {% endif %}
+
+				</button>
+	</div>						
+
+
+
+		
+
+
+
+<div class="coverWeb" id="googleFacebook">
+
+	<div class="col-xs-12 col-sm-7 col-md-6 col-lg-4 " style=" max-width: 350px; min-width: 300px; top:10px; background-color:#F9F9F9; padding:0px; margin-bottom:15px; text-align: center; height:420px; border-radius:5px 5px 5px 5px;">
+
+		<div class="col-lg-12 col-lg-12 col-lg-12 col-lg-12 header_login_signup " style="padding:10px 0px 0px 0px;margin-bottom:20px;color:#7E7E7E;background-color:#EDF0F0;border-radius:5px 5px 0 0;" >
+					<p>
+						<font style="font-family:Verdana; font-size:110%;">
+						Welcome
+						</font>		
+					</p>
+		</div>
+	
+
+	<div class="col-lg-12">
+		<div class="col-lg-12">
+			
+			<button class="loginBtn loginBtn--facebook" id="login_facebook"> Continue with Facebook </button> 
+		</div>
+
+		<div class="col-lg-12">
+			<button class="g-signin loginBtn loginBtn--google" id="login_google"
+						data-scope="openid email"
+						data-clientid="217307309519-cpmhnceomugub797od9sub1qv3s6sg93.apps.googleusercontent.com"
+						data-redirecturi="postmessage"
+						data-accesstype="offline"
+						data-cookiepolicy="single_host_origin"
+						data-callback="GooglesignInCallback" 
+						data-approvalprompt="force"> 
+						<!-- remove data-approvalprompt="force" during deployment -->
+						Continue with Google </button> 
+		</div>
+	</div>
+		
+		
+		
+		<!-- Horizontal line  Division using [OR] --> 
+		<div class="col-xs-12 col-sm-12  login_Or">
+			<hr class="hr_Or">
+			<span class="span_Or">OR</span>
+		</div>
+
+		
+
+		
+		<div class="col-xs-12 col-sm-12 col-lg-12" style="text-align: center;  margin-top:15px;">
+			    
+				<form class="" action="" autocomplete="off" method="POST">
+				
+					<div class="input-group login-input">
+						<span class="inputSpan  input-group-addon" ><i class="glyphicon glyphicon glyphicon-user"></i></span>
+						<input type="text" class="inputBar  form-control " name="username" placeholder="Email">
+					</div>
+					
+					<!-- <span class="help-block"></span> -->
+										
+					<div class="input-group login-input">
+						<span class="inputSpan  input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+						<input   type="password" class="inputBar  form-control " name="password" placeholder="Password">
+					</div>
+					
+				
+				
+					<div class="checkbox" >
+						<label style="font-weight:600;">
+							<input type="checkbox" value="remember">
+								<font style="font-size:90%"> 
+									Remember Me
+								</font>
+						</label>
+					</div>
+					
+					
+					<button class="btn btn-lg btn-primary " type="submit">
+							Login
+					</button>
+					
+				</form>
+
+		</div>
+			
+
+		<div class="row ">
+
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 " style="box-sizing: border-box; text-align:right;" >
+				<p style="padding-right:10px; box-sizing: border-box;">
+					<a href="#">Forgot password?</a>
+				</p>
+			</div>
+		</div>
+		
+
+			
+		<div class="col-lg-12 col-lg-12 col-lg-12 col-lg-12" style="position:relative; bottom:10px; margin:10px 0px 10px 0px; color:#7E7E7E;">
+				
+					<font style="font-family:Verdana; font-size:90%;  ">
+						Not a Member? <span class="signUpButton" id="signUpUnderLogin">  Sign Up </span>
+					</font>		
+				
+		</div>
+		
+		
+	</div>
+</div>
+
+
+
+
+<div class="coverWeb" id="signUpDiv">
+	
+	<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3"  style=" max-width: 350px; min-width: 300px; top:30px; background-color:#F9F9F9; padding:0px; margin-bottom:15px; text-align: center; height:380px; border-radius:5px 5px 5px 5px;">
+		<div class="col-lg-12 col-lg-12 col-lg-12 col-lg-12" id="signUpHeader" style="padding:10px 0px 0px 0px; margin-bottom:5px; color:#7E7E7E; background-color:#EDF0F0; border-radius:5px 5px 0 0;">
+					<p>
+						<font style="font-family:Verdana; font-size:110%;">
+								header two
+						</font>		
+					</p>
+		</div>
+			    
+		<form class="" action="" autocomplete="off" method="POST" >
+				<div class="col-xs-12 col-sm-12 col-lg-12" style="   margin-top:15px;">
+					
+					<div class="input-group login-input">
+						<span class="inputSpan  input-group-addon" ><i class="glyphicon glyphicon glyphicon-user"></i></span>
+						<input type="text" class="inputBar  form-control " name="username" placeholder="Username">
+					</div>
+				
+					<div class="input-group login-input">
+						<span class="inputSpan  input-group-addon" ><i class="glyphicon glyphicon glyphicon-envelope"></i></span>
+						<input type="text" class="inputBar  form-control " name="email" placeholder="Email">
+					</div>
+										
+					<div class="input-group login-input">
+						<span class="inputSpan  input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+						<input   type="password" class="inputBar  form-control " name="password" placeholder="Password">
+					</div>
+
+					<div class="checkbox" >
+						<label  style="font-weight:600; font-family:Arial;">
+							<input type="checkbox" value="TC"> 
+									<font style="font-size:90%">
+											I agree to 
+									</font> 
+									<a href="#">
+										<font style="font-size:80%">
+											Terms and Condition
+										</font>
+									</a>
+						</label>
+					</div>
+					
+					<div class="checkbox" >
+						<label style="font-weight:600;">
+							<input type="checkbox" value="remember">
+								<font style="font-size:90%"> 
+									Remember Me
+								</font>
+						</label>
+					</div>
+					
+					
+					<button class="btn btn-lg btn-primary ">
+							Sign Up
+					</button>
+					
+				</div>
+		</form>
+		
+	</div>
+</div>
+
+
+
+
+</body>
+</html>
