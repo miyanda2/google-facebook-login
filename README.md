@@ -10,4 +10,4 @@ Facebook SDK --> https://developers.facebook.com/docs/javascript
 
 
 
-![alt text](https://github.com/VamshikShetty/Image-Recognition-Software/blob/master/example.png)
+![alt text](https://raw.githubusercontent.com/VamshikShetty/google-facebook-login/master/login.png)
